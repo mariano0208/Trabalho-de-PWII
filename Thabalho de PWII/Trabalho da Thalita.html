@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+ 
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+ 
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            max-width: 700px;
+            margin: 2rem auto;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+ 
+        .form-title {
+            color: #2a2a2a;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+ 
+        .form-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, rgb(231, 135, 56) 0%, #e6b9a4 100%);
+            border-radius: 2px;
+        }
+ 
+        .form-label {
+            font-weight: 500;
+            color: #181616;
+            margin-bottom: 0.5rem;
+        }
+ 
+        .form-control {
+            border-radius: 10px;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+ 
+        .form-control:focus {
+            border-color: #4080f8;
+            box-shadow: 0 0 0 3px rgba(66, 2, 2, 0.1);
+        }
+ 
+        .form-check-input:checked {
+            background-color: #e7945c;
+            border-color: #be500f;
+        }
+ 
+        .btn-custom {
+            background: linear-gradient(135deg, #804823 0%, #d45906 100%);
+            border: none;
+            color: white;
+            padding: 12px 0;
+            font-weight: 500;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+ 
+        .btn-custom:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(228, 101, 43, 0.3);
+        }
+ 
+        .tech-section {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1rem 0;
+        }
+ 
+        .form-check-label {
+            color: #5a5a5a;
+        }
+ 
+        @media (max-width: 768px) {
+            .form-container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form class="form-container shadow-lg">
+            <h2 class="form-title">Cadastro de Desenvolvedor</h2>
+ 
+            <div class="row g-4">
+                <!-- Coluna Esquerda -->
+                <div class="col-md-6">
+                    <div class="mb-4">
+                        <label for="nome" class="form-label">Nome completo</label>
+                        <input type="text" class="form-control" id="nome" placeholder="João Silva" required>
+                    </div>
+ 
+                    <div class="mb-4">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="email" placeholder="joao@exemplo.com" required>
+                    </div>
+ 
+                    <div class="mb-4">
+                        <label for="nascimento" class="form-label">Data de nascimento</label>
+                        <input type="date" class="form-control" id="nascimento" required>
+                    </div>
+                </div>
+ 
+                <!-- Coluna Direita -->
+                <div class="col-md-6">
+                    <div class="mb-4">
+                        <label for="idade" class="form-label">Idade</label>
+                        <input type="number" class="form-control" id="idade" min="0" placeholder="25" required>
+                    </div>
+ 
+                    <div class="mb-4">
+                        <label for="senha" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="senha" placeholder="••••••••" required>
+                    </div>
+ 
+                    <div class="mb-4">
+                        <label for="so" class="form-label">Sistema operacional</label>
+                        <select class="form-select" id="so">
+                            <option>Windows</option>
+                            <option>Linux</option>
+                            <option>macOS</option>
+                            <option>Outro</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- Seção de Tecnologias -->
+            <div class="tech-section">
+                <label class="form-label mb-3">Tecnologias que domina</label>
+                <div class="row g-3">
+                    <div class="col-6 col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="html">
+                            <label class="form-check-label" for="html">HTML</label>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="css">
+                            <label class="form-check-label" for="css">CSS</label>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="js">
+                            <label class="form-check-label" for="js">JavaScript</label>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="php">
+                            <label class="form-check-label" for="php">PHP</label>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="python">
+                            <label class="form-check-label" for="python">Python</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- Nível de Experiência -->
+            <div class="mb-4">
+                <label class="form-label">Nível em HTML</label>
+                <div class="d-flex gap-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="experiencia" id="iniciante">
+                        <label class="form-check-label" for="iniciante">Iniciante</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="experiencia" id="intermediario">
+                        <label class="form-check-label" for="intermediario">Intermediário</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="experiencia" id="avancado">
+                        <label class="form-check-label" for="avancado">Avançado</label>
+                    </div>
+                </div>
+            </div>
+ 
+            <!-- Botão de Envio -->
+            <button type="submit" class="btn btn-custom w-100 mt-3">
+                <i class="bi bi-send-check me-2"></i> Cadastrar
+            </button>
+        </form>
+    </div>
+ 
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
